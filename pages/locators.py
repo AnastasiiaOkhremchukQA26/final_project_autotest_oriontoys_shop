@@ -15,6 +15,7 @@ class BasePageLocators:
     LOGO = (By.XPATH, "//div[@id='_desktop_logo']//img")
     SEARCH = (By.XPATH, "//div[@id='_desktop_seach_widget']//input[@type='text']")
     SEARCH_BUTTON = (By.XPATH, "//*[@id='ajax-search-btn']")
+    CONTACT_INFO = (By.XPATH, "//*[@id='_desktop_contactinfo']")
     CART_SECTION = (By.XPATH, "//*[@id='cart']/button")
     CART = (By.XPATH, "//span[@class='cart-name'][contains(text(), 'Кошик')]")
     CART_DROPDOWN = (By.XPATH, "//*[@id='cart']/ul")
@@ -36,7 +37,7 @@ class MainPageLocators:
 
     DELIVERY_ACROSS_UKRAINE = (By.XPATH, "(//div[@class='services col-lg-3 col-md-3 col-sm-6 col-xs-6'])[1]")
     FREE_SHIPPING = (By.XPATH, "(//div[@class='services col-lg-3 col-md-3 col-sm-6 col-xs-6'])[2]")
-    CONVENIENT_DELIVERY = (By.XPATH, "(//div[@class='services col-lg-3 col-md-3 col-sm-6 col-xs-6'])[3]")
+    CONVENIENT_PAYMENT = (By.XPATH, "(//div[@class='services col-lg-3 col-md-3 col-sm-6 col-xs-6'])[3]")
     GUARANTEE = (By.XPATH, "(//div[@class='services col-lg-3 col-md-3 col-sm-6 col-xs-6'])[4]")
 
     CATEGORIES = (By.XPATH, "(//div[@class='block_content'])[1]")
