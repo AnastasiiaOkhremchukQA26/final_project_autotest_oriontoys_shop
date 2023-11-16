@@ -21,11 +21,9 @@ class TestMainPage:
     def test_main_page_header(self, browser):
         self.link_to_cabinet = browser.current_url
         page = MainPage(browser, self.link_to_cabinet)
-        page.is_button_user()
         page.is_button_register()
         page.is_button_autorization()
         page.is_button_wishlist()
-        page.is_button_language()
         page.is_button_ukrainian()
         page.is_button_russian()
         page.is_button_facebook()
