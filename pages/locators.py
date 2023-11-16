@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class BasePageLocators:
-    USER_INFO = (By.XPATH, "//a[@title='Особистий кабінет']")
+    USER_INFO = (By.XPATH, "//span[@class='expand-more']")
     REGISTER = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(text(), 'Реєстрація')]")
     AUTHORIZATION = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(text(), 'Авторизація')]")
     WISHLIST = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(@title, 'Закладки')]")
