@@ -2,46 +2,36 @@ from ..pages import base_page, locators
 import inspect
 
 class MainPage(base_page.BasePage):
-    def is_button_user(self):
-        assert self.is_element_present(*locators.BasePageLocators.USER_INFO), \
-            "The element is not present"
-        print(f"{inspect.currentframe().f_code.co_name} - Ok")
-
     def is_button_register(self):
-        assert self.click_element(*locators.BasePageLocators.USER_INFO), \
+        assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
             "The element is not present or intractable"
         assert self.is_element_present(*locators.BasePageLocators.REGISTER), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_button_autorization(self):
-        assert self.click_element(*locators.BasePageLocators.USER_INFO), \
+        assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
             "The element is not present or intractable"
         assert self.is_element_present(*locators.BasePageLocators.AUTHORIZATION), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_button_wishlist(self):
-        assert self.click_element(*locators.BasePageLocators.USER_INFO), \
+        assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
             "The element is not present or intractable"
         assert self.is_element_present(*locators.BasePageLocators.WISHLIST), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
-    def is_button_language(self):
-        assert self.is_element_present(*locators.BasePageLocators.LANGUAGE), \
-            "The element is not present"
-        print(f"{inspect.currentframe().f_code.co_name} - Ok")
-
     def is_button_ukrainian(self):
-        assert self.click_element(*locators.BasePageLocators.LANGUAGE), \
+        assert self.hover_action(*locators.BasePageLocators.LANGUAGE), \
             "The element is not present or intractable"
         assert self.is_element_present(*locators.BasePageLocators.UKRAINIAN), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_button_russian(self):
-        assert self.click_element(*locators.BasePageLocators.LANGUAGE), \
+        assert self.hover_action(*locators.BasePageLocators.LANGUAGE), \
             "The element is not present or intractable"
         assert self.is_element_present(*locators.BasePageLocators.RUSSIAN), \
             "The element is not present"
