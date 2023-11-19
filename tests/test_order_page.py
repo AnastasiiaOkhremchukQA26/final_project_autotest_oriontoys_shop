@@ -20,7 +20,7 @@ class TestOrderPage:
         page = SignupLoginPage(browser, self.link_to_cabinet)
         page.click_button_signup_login()
         page.explicit_wait(2)
-        page.input_email_password(sets.TEST_EMAIL, sets.PASSWORD)
+        page.input_email_password(sets.TEST_EMAIL, sets.PASSWORD, sets.NAME, sets.PHONE, sets.POSTCODE, sets.ADDRESS)
         page.press_button_login()
         page.is_alert_success()
         page.is_button_logout_in_header()
@@ -51,7 +51,7 @@ class TestOrderPage:
         page = OrderPage(browser, self.link_to_cabinet)
         page.add_notice()
         page.press_green_btn_checkout()
-        page.is_alert_success()
+        page.is_success()
         page.explicit_wait(5)
 
 
