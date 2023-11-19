@@ -1,5 +1,9 @@
 PROD_SERVER = "https://oriontoys.shop/"
-TEST_EMAIL = "test.mail@mail.com"
+TEST_EMAIL = "test.mail1@mail.com"
 PASSWORD = "Qwerty54321"
+NAME = "Jaylen Blackwell"
+PHONE = "0999999999"
+POSTCODE = "03190"
+ADDRESS = "вул. Миколи Василенка"
 IMPLICITLY_WAIT = 10 #Неявні очікування
 EXPLICIT_WAIT = 10 #Явні очікування
