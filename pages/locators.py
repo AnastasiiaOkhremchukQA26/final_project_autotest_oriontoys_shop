@@ -91,12 +91,11 @@ class OrderPageLocators:
     QTY = (By.XPATH, "//span[@class='cart-products-count hidden-lg hidden-md']/text()")
     CHECKOUT_BTN_POPUP = (By.XPATH, "//button[@class='btn btn-primary btn-cartblock' and @style='width:100%;']")
     YA_ZAREESTROVANYU = (By.XPATH, "//a[@href='javascript:void(0)' and @data-onclick='openLoginBox']")
-
-
-    CART_REG_FORM = (By.XPATH, "//div[@class = 'cart-reg']")
+    PAYMENT_AFTER_DELIVERY = (By.XPATH, "//*[@id='simplecheckout_payment']/div[3]/div[2]/label")
+    SUCCESS_ORDER = (By.XPATH, "//*[@id='content']/div[1]/h1")
     INPUT_EMAIL = (By.XPATH, "//input[@name = 'email']")
     INPUT_PASSWORD = (By.XPATH, "//input[@name = 'password']")
-    INPUT_NOTE = (By.XPATH, "//textarea[@name= 'note']")
+    INPUT_NOTE = (By.XPATH, "//*[@id='comment']")
     CHECKOUT_BUTTON = (By.XPATH, "//button[@class = 'btn green']")
 
 class CabinetPageLocators:
