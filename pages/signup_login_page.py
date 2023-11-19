@@ -9,12 +9,9 @@ class SignupLoginPage(base_page.BasePage):
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
-    def is_h1_vhod(self):
-        assert self.is_element_present(*locators.SignupLoginPageLocators.H1_VHOD), \
-            "Button login is not present"
-        print(f"{inspect.currentframe().f_code.co_name} - Ok")
-
     def press_button_login(self):
+        assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
+            "The element is not present"
         assert self.click_element(*locators.SignupLoginPageLocators.BUTTON_LOGIN), \
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
@@ -76,6 +73,3 @@ class SignupLoginPage(base_page.BasePage):
         assert self.click_element(*locators.BasePageLocators.LOGOUT), \
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
-
-
-
