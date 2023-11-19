@@ -2,6 +2,11 @@ from ..pages import base_page, locators
 import inspect
 
 class MainPage(base_page.BasePage):
+    def is_button_user(self):
+        assert self.is_element_present(*locators.BasePageLocators.USER_INFO), \
+            "The element is not present"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
     def is_button_register(self):
         assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
             "The element is not present or intractable"
@@ -20,6 +25,11 @@ class MainPage(base_page.BasePage):
         assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
             "The element is not present or intractable"
         assert self.is_element_present(*locators.BasePageLocators.WISHLIST), \
+            "The element is not present"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
+    def is_button_language(self):
+        assert self.is_element_present(*locators.BasePageLocators.LANGUAGE), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
@@ -78,27 +88,27 @@ class MainPage(base_page.BasePage):
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_about_us(self):
-        assert self.is_element_present(*locators.MainPageLocators.ABOUT_US), \
+        assert self.is_element_present(*locators.BasePageLocators.ABOUT_US), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_delivery_and_payment(self):
-        assert self.is_element_present(*locators.MainPageLocators.DELIVERY_AND_PAYMENT), \
+        assert self.is_element_present(*locators.BasePageLocators.DELIVERY_AND_PAYMENT), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_returns_and_warranty(self):
-        assert self.is_element_present(*locators.MainPageLocators.RETURNS_AND_WARRANTY), \
+        assert self.is_element_present(*locators.BasePageLocators.RETURNS_AND_WARRANTY), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_contacts(self):
-        assert self.is_element_present(*locators.MainPageLocators.CONTACTS), \
+        assert self.is_element_present(*locators.BasePageLocators.CONTACTS), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_specials(self):
-        assert self.is_element_present(*locators.MainPageLocators.SPECIALS), \
+        assert self.is_element_present(*locators.BasePageLocators.SPECIALS), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
