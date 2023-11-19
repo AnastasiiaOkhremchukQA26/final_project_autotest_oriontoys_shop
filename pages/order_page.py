@@ -71,12 +71,10 @@ class OrderPage(base_page.BasePage):
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
-    def press_btn_ya_zareestrovanyu(self):
-        assert self.click_element(*locators.OrderPageLocators.YA_ZAREESTROVANYU), \
+    def press_payment_after_delivery(self):
+        assert self.click_element(*locators.OrderPageLocators.PAYMENT_AFTER_DELIVERY), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
-
-
 
     def add_notice(self):
         assert self.input_data(*locators.OrderPageLocators.INPUT_NOTE, "Test.."), \
@@ -88,7 +86,7 @@ class OrderPage(base_page.BasePage):
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
-    def is_alert_success(self):
-        assert self.is_element_appears_after_while(*locators.BasePageLocators.ALERT_SUCCESS, timeout=5), \
+    def is_success(self):
+        assert self.is_element_present(*locators.OrderPageLocators.SUCCESS_ORDER), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
