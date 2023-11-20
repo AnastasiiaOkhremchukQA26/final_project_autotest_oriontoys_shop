@@ -1,5 +1,5 @@
 PROD_SERVER = "https://oriontoys.shop/"
-TEST_EMAIL = "test.mail1@mail.com"
+TEST_EMAIL = "test.mail4@mail.com"
 PASSWORD = "Qwerty54321"
 NAME = "Jaylen Blackwell"
 PHONE = "0999999999"
