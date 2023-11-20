@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators:
     USER_INFO = (By.XPATH, "//span[@class='expand-more']")
     REGISTER = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(text(), 'Реєстрація')]")
-    AUTHORIZATION = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(text(), 'Авторизація')]")
+    AUTHORIZATION = (By.XPATH, "//a[@href='https://oriontoys.shop/index.php?route=account/login']")
     WISHLIST = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(@title, 'Закладки')]")
     LOGOUT = (By.XPATH, "//a[@href='https://oriontoys.shop/index.php?route=account/logout' and text()='Вихід']")
     LANGUAGE = (By.XPATH, "//*[@id='form-language']/div/button/img")
@@ -71,13 +71,13 @@ class SignupLoginPageLocators:
     INPUT_POST = (By.XPATH, "//*[@id='register_city']/option[7]")
     INPUT_POSTCODE = (By.XPATH, "//*[@id='register_postcode']")
     INPUT_ADDRESS = (By.XPATH, "//*[@id='register_address_1']")
-    BUTTON_SIGNUP = (By.XPATH, "//*[@id='simpleregister_button_confirm']")
+    BUTTON_SIGNUP = (By.XPATH, "//*[@id='simpleregister']/div[2]/div")
     H1_VHOD = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(text(), 'Авторизація')]")
-    BUTTON_LOGIN = (By.XPATH, "//ul[@class='dropdown-menu']//a[contains(text(), 'Авторизація')]")
+    BUTTON_LOGIN = (By.XPATH, "//a[@href='https://oriontoys.shop/index.php?route=account/login']")
     SUCCESS = (By.XPATH, "//*[@id='content']/div[1]/h1")
 
 class OrderPageLocators:
-    FIRST_PRODUCT = (By.XPATH, "//a[@href='https://oriontoys.shop/igrashka-vertolit-arbalet-vijskovyj-patriot-orion-art-268v3']")
+    FIRST_PRODUCT = (By.XPATH, "//*[@id='featured-products-block1389459391']/div/div/div[1]/div/div[3]/div/div[2]/div/div[3]/a/img[2]")
     BUTTON_ADD_FIRST_PRODUCT = (By.XPATH, "//*[@id='button-cart']")
     PRICE_FIRST_PRODUCT = (By.XPATH, "//li[@class='product-price hidden-xs']/h2")
     ALERT_SUCCESS_AFTER_ADD_FIRST_PRODUCT = (By.XPATH, "//div[@class='col-xs-12 alert alert-success'][@data-notify='container']")
