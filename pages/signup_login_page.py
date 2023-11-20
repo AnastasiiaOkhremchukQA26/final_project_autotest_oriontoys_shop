@@ -9,6 +9,11 @@ class SignupLoginPage(base_page.BasePage):
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
+    def button_login(self):
+        assert self.is_element_present(*locators.BasePageLocators.AUTHORIZATION), \
+            "The element is not present"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
     def press_button_login(self):
         assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
             "The element is not present"
@@ -70,6 +75,9 @@ class SignupLoginPage(base_page.BasePage):
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def press_button_logout(self):
+        assert self.hover_action(*locators.BasePageLocators.USER_INFO), \
+            "The element is not present"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
         assert self.click_element(*locators.BasePageLocators.LOGOUT), \
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
