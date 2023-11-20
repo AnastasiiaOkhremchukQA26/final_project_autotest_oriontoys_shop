@@ -20,10 +20,14 @@ class TestOrderPage:
         page = SignupLoginPage(browser, self.link_to_cabinet)
         page.click_button_signup_login()
         page.explicit_wait(2)
-        page.input_email_password(sets.TEST_EMAIL, sets.PASSWORD, sets.NAME, sets.PHONE, sets.POSTCODE, sets.ADDRESS)
+        page.button_login()
         page.press_button_login()
+        page.click_signup()
+        page.explicit_wait(2)
+        page.is_h1_signup()
+        page.input_email_password(sets.TEST_EMAIL, sets.PASSWORD, sets.NAME, sets.PHONE, sets.POSTCODE, sets.ADDRESS)
+        page.press_button_signup()
         page.is_alert_success()
-        page.is_button_logout_in_header()
         page = OrderPage(browser, self.link_to_cabinet)
         page.click_on_logo()
         page.explicit_wait(2)
@@ -34,6 +38,7 @@ class TestOrderPage:
         global price_1_product
         price_1_product = page.add_to_cart_first_product()
         page.explicit_wait(2)
+        page.is_alert_success_after_add_first_product()
         page.press_btn_continue_shop_popup()
         page.explicit_wait(2)
         global price_2_product
@@ -49,6 +54,7 @@ class TestOrderPage:
     def test_checkout(self, browser):
         self.link_to_cabinet = browser.current_url
         page = OrderPage(browser, self.link_to_cabinet)
+        page.press_payment_after_delivery()
         page.add_notice()
         page.press_green_btn_checkout()
         page.is_success()
