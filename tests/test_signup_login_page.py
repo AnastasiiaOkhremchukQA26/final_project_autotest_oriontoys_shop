@@ -29,6 +29,8 @@ class TestSignupLoginLogautPage:
         page = SignupLoginPage(browser, self.link_to_cabinet)
         page.click_button_signup_login()
         page.explicit_wait(2)
+        page.button_login()
+        page.press_button_login()
         page.click_signup()
         page.explicit_wait(2)
         page.is_h1_signup()
