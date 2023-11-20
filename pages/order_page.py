@@ -1,6 +1,7 @@
 from ..pages import base_page, locators
 import inspect
 import re
+import math
 
 
 class OrderPage(base_page.BasePage):
@@ -15,7 +16,10 @@ class OrderPage(base_page.BasePage):
         assert self.click_element(*locators.OrderPageLocators.BUTTON_ADD_FIRST_PRODUCT), \
             "The element is not present or intractable"
         price = self.get_text(*locators.OrderPageLocators.PRICE_FIRST_PRODUCT)
-        price = int(price.replace(' грн.', ''))  # 248
+        if price:
+            price = float(price.replace('₴', ''))
+        else:
+            pass
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
         if price:
             return price
@@ -41,7 +45,7 @@ class OrderPage(base_page.BasePage):
         assert self.input_data(*locators.OrderPageLocators.SECOND_PRODUCT_INPUT_NUMBER_QTY, 2), \
             "The element currency is not present"
         price = self.get_text(*locators.OrderPageLocators.PRICE_SECOND_PRODUCT)
-        price = int(price.replace(' грн.', '')) * 2
+        price = float(price.replace('₴', '')) * 2
         assert self.click_element(*locators.OrderPageLocators.CHOOSE_COLOR_SECOND_PRODUCT), \
             "The element is not present"
         assert self.click_element(*locators.OrderPageLocators.ADD_COLOR_SECOND_PRODUCT), \
@@ -52,21 +56,36 @@ class OrderPage(base_page.BasePage):
         if price:
             return price
 
+    '''
     def check_total_price_qty(self, price1, price2, qty):
-        total_price = self.get_text(*locators.OrderPageLocators.TOTAL_PRICE)
+        total_price_str = self.get_text(*locators.OrderPageLocators.TOTAL_PRICE)
         self.explicit_wait(2)
-        total_price = int(re.sub("[^0-9]", "", total_price))
-        print(f"total_prise int: {total_price}")
-        total_actual = price1 + price2
-        print(f"total_actual int: {total_actual}")
-        assert total_actual == total_price, \
-            "Total price doesn't match to actual"
+
+        # Видаляємо всі символи окрім цифр
+        total_price = int(re.sub("[^0-9]", "", total_price_str))
+
+        # Перевіряємо, чи total_price має вірній формат
+        assert math.isclose(total_price, price1 + price2), "Total price doesn't match the actual total"
+
         qty_actual = int(self.get_text(*locators.OrderPageLocators.QTY))
-        assert qty_actual == qty, \
-            "QTY doesn't match to actual"
+        assert qty_actual == qty, "QTY doesn't match the actual qty"
+
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
+    '''
+    def check_products(self):
+        assert self.click_element(*locators.OrderPageLocators.CART_PRODUCTS), \
+            "The element is not present"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
+    def check_cart(self):
+        assert self.is_element_present(*locators.OrderPageLocators.CHECKOUT_BTN_POPUP), \
+            "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def press_btn_checkout_popup(self):
+        assert self.hover_action(*locators.OrderPageLocators.CART_PRODUCTS), \
+            "The element is not present"
         assert self.click_element(*locators.OrderPageLocators.CHECKOUT_BTN_POPUP), \
             "The element currency is not present or intractable"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
