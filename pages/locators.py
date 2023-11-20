@@ -77,11 +77,11 @@ class SignupLoginPageLocators:
     SUCCESS = (By.XPATH, "//*[@id='content']/div[1]/h1")
 
 class OrderPageLocators:
-    FIRST_PRODUCT = (By.XPATH, "//*[@id='featured-products-block1389459391']/div/div/div[1]/div/div[3]/div/div[2]/div/div[3]/a/img[2]")
+    FIRST_PRODUCT = (By.XPATH, "//h4[a/@href='https://oriontoys.shop/igrashka-vertolit-arbalet-vijskovyj-patriot-orion-art-268v3']")
     BUTTON_ADD_FIRST_PRODUCT = (By.XPATH, "//*[@id='button-cart']")
     PRICE_FIRST_PRODUCT = (By.XPATH, "//li[@class='product-price hidden-xs']/h2")
     ALERT_SUCCESS_AFTER_ADD_FIRST_PRODUCT = (By.XPATH, "//div[@class='col-xs-12 alert alert-success'][@data-notify='container']")
-    SECOND_PRODUCT = (By.XPATH, "//a[@href='https://oriontoys.shop/aktyvnyj-vidpochynok/bajk-art-503'']")
+    SECOND_PRODUCT = (By.XPATH, "//h4/a[contains(text(), 'Байк «арт.503»')]")
     SECOND_PRODUCT_INPUT_NUMBER_QTY = (By.XPATH, "//*[@id='input-quantity']")
     PRICE_SECOND_PRODUCT = (By.XPATH, "//li[@class='product-price hidden-xs']/h2")
     CHOOSE_COLOR_SECOND_PRODUCT = (By.XPATH, "//*[@id='input-option286']")
@@ -89,6 +89,7 @@ class OrderPageLocators:
     BUTTON_ADD_SECOND_PRODUCT = (By.XPATH, "//button[@id='button-cart']")
     TOTAL_PRICE = (By.XPATH, "//span[@class='cart-products-count']")
     QTY = (By.XPATH, "//span[@class='cart-products-count hidden-lg hidden-md']/text()")
+    CART_PRODUCTS = (By.XPATH, "//span[@class='cart-content']/span[@class='cart-name']")
     CHECKOUT_BTN_POPUP = (By.XPATH, "//button[@class='btn btn-primary btn-cartblock' and @style='width:100%;']")
     YA_ZAREESTROVANYU = (By.XPATH, "//a[@href='javascript:void(0)' and @data-onclick='openLoginBox']")
     PAYMENT_AFTER_DELIVERY = (By.XPATH, "//*[@id='simplecheckout_payment']/div[3]/div[2]/label")
