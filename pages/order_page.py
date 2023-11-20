@@ -10,7 +10,7 @@ class OrderPage(base_page.BasePage):
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def add_to_cart_first_product(self):
-        assert self.hover_action(*locators.OrderPageLocators.FIRST_PRODUCT), \
+        assert self.click_element(*locators.OrderPageLocators.FIRST_PRODUCT), \
             "The element is not present"
         assert self.click_element(*locators.OrderPageLocators.BUTTON_ADD_FIRST_PRODUCT), \
             "The element is not present or intractable"
@@ -20,7 +20,7 @@ class OrderPage(base_page.BasePage):
         if price:
             return price
 
-    def is_alert_success_after_subscribe(self):
+    def is_alert_success_after_add_first_product(self):
         assert self.is_element_appears_after_while(*locators.OrderPageLocators.ALERT_SUCCESS_AFTER_ADD_FIRST_PRODUCT, timeout=5), \
             "The element is not present"
         print(f"{inspect.currentframe().f_code.co_name} - OK")
